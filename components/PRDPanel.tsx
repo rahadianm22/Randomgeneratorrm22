@@ -28,7 +28,7 @@ export default function PRDPanel({ brief }: { brief: Brief }) {
           </span>
           <button
             onClick={copy}
-            className="border border-white/40 px-3 py-1.5 text-sm font-semibold transition-colors hover:bg-white hover:text-ink"
+            className="no-print border border-white/40 px-3 py-1.5 text-sm font-semibold transition-colors hover:bg-white hover:text-ink"
           >
             {copied ? "Copied" : "Copy brief"}
           </button>

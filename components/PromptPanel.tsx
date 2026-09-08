@@ -22,7 +22,7 @@ export default function PromptPanel({ prompt }: { prompt: string }) {
         <h2 className="text-lg font-bold">Ready to paste into an AI</h2>
         <button
           onClick={copy}
-          className="border border-ink px-3 py-1.5 text-sm transition-colors hover:bg-ink hover:text-white"
+          className="no-print border border-ink px-3 py-1.5 text-sm transition-colors hover:bg-ink hover:text-white"
         >
           {copied ? "Copied" : "Copy prompt"}
         </button>

@@ -37,3 +37,27 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- print / PDF export ---------- */
+@media print {
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-area {
+    margin-top: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  .print-avoid-break {
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: 18px;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

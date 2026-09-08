@@ -5,6 +5,7 @@ import BriefCard from "@/components/BriefCard";
 import PRDPanel from "@/components/PRDPanel";
 import PromptPanel from "@/components/PromptPanel";
 import HistoryView from "@/components/HistoryView";
+import PdfButton from "@/components/PdfButton";
 import { buildPrompt, generateBrief, type Brief } from "@/lib/generate";
 
 type Tab = "main" | "history";
@@ -32,7 +33,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="bg-natuna px-5 pt-10 pb-22 text-white sm:px-8">
+      <header className="no-print bg-natuna px-5 pt-10 pb-22 text-white sm:px-8">
         <div className="mx-auto max-w-[1000px]">
           <span className="mb-5 inline-flex items-center gap-2 text-sm text-white/75">
             <span className="h-2 w-2 rounded-full bg-ember" /> Design by Rahadianm22
@@ -48,8 +49,8 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto -mt-13 max-w-[1000px] px-5 pb-20 sm:px-8">
-        <div className="inline-flex gap-1 border border-line bg-white p-1 shadow-[0_18px_40px_-26px_rgba(19,26,58,0.5)]">
+      <main className="print-area mx-auto -mt-13 max-w-[1000px] px-5 pb-20 sm:px-8">
+        <div className="tabbar-wrap no-print inline-flex gap-1 border border-line bg-white p-1 shadow-[0_18px_40px_-26px_rgba(19,26,58,0.5)]">
           <button
             onClick={() => setTab("main")}
             className={`px-5 py-2.5 text-[15px] font-medium ${
@@ -77,7 +78,7 @@ export default function Home() {
 
         {tab === "main" ? (
           <div className="mt-7">
-            <div className="flex flex-wrap gap-3">
+            <div className="no-print flex flex-wrap gap-3">
               <button
                 onClick={() => draw(false)}
                 className="bg-ink px-6.5 py-3.5 text-[15.5px] font-semibold text-white shadow-[4px_4px_0_var(--color-line)] transition-transform hover:-translate-x-px hover:-translate-y-px active:translate-x-0.5 active:translate-y-0.5"
@@ -90,18 +91,25 @@ export default function Home() {
               >
                 Go crazy
               </button>
+              <PdfButton brief={brief} />
             </div>
 
             {brief && (
               <div className="mt-6 flex flex-col gap-6">
-                <BriefCard brief={brief} />
-                <PRDPanel brief={brief} />
-                <PromptPanel prompt={buildPrompt(brief)} />
+                <div className="print-avoid-break">
+                  <BriefCard brief={brief} />
+                </div>
+                <div className="print-avoid-break">
+                  <PRDPanel brief={brief} />
+                </div>
+                <div className="print-avoid-break">
+                  <PromptPanel prompt={buildPrompt(brief)} />
+                </div>
               </div>
             )}
           </div>
         ) : (
-          <div className="mt-7">
+          <div className="mt-7 no-print">
             <HistoryView
               briefs={log}
               onSelect={selectFromHistory}
