@@ -92,7 +92,7 @@ export default function PdfButton({
     <button
       onClick={handleClick}
       disabled={!brief || status === "busy"}
-      className="inline-flex items-center gap-2 border-2 border-white bg-transparent px-5 py-3 text-[15px] font-bold text-white transition-colors hover:bg-white hover:text-ink disabled:opacity-60"
+      className="inline-flex items-center gap-2 rounded-xl border-2 border-white px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white hover:text-ink disabled:opacity-60"
     >
       <svg
         viewBox="0 0 24 24"

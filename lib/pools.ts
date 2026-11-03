@@ -90,7 +90,7 @@ export const pools: Pool = {
     "No pop-up windows allowed",
     "Every screen of the flow must be visible side by side on one board",
     "The main button must not be blue",
-    "No buttons — everything happens by swiping or dragging",
+    "No buttons: everything happens by swiping or dragging",
     "Every single element must have a visible outline",
     "It must be laid out right to left",
     "No pictures or symbols allowed, words only",

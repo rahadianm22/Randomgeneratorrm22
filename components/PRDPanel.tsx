@@ -36,17 +36,17 @@ export default function PRDPanel({ brief, lang }: { brief: Brief; lang: Lang }) 
   }
 
   return (
-    <section ref={ref} className="border border-line bg-white">
+    <section ref={ref} className="overflow-hidden rounded-2xl border border-line bg-white">
       <header className="flex flex-wrap items-center justify-between gap-3 bg-ink px-6 py-4 text-white">
         <h2 className="text-lg font-bold">{t.fullBrief}</h2>
         <div className="ml-auto flex items-center gap-3">
-          <span className="text-xs font-semibold text-white/55">
+          <span className="text-sm text-white/60">
             {t.brief} {brief.id}
           </span>
           <button
             onClick={copy}
             data-no-capture="true"
-            className="no-print border border-white/40 px-3 py-1.5 text-sm font-semibold transition-colors hover:bg-white hover:text-ink"
+            className="no-print rounded-lg border border-white/40 px-3 py-1.5 text-sm font-semibold transition-colors hover:bg-white hover:text-ink"
           >
             {status === "copied"
               ? t.imageCopied
@@ -58,7 +58,7 @@ export default function PRDPanel({ brief, lang }: { brief: Brief; lang: Lang }) 
       </header>
 
       <div className="border-b border-line px-6 py-5">
-        <h3 className="mb-2 text-xs font-bold tracking-wide text-natuna-deep uppercase">
+        <h3 className="mb-2 text-sm font-semibold text-natuna-deep">
           {t.situation}
         </h3>
         <p className="max-w-[70ch] leading-relaxed">{prd.context}</p>
@@ -66,13 +66,13 @@ export default function PRDPanel({ brief, lang }: { brief: Brief; lang: Lang }) 
 
       <div className="grid divide-line border-b border-line sm:grid-cols-2 sm:divide-x">
         <div className="px-6 py-5">
-          <h3 className="mb-2 text-xs font-bold tracking-wide text-natuna-deep uppercase">
+          <h3 className="mb-2 text-sm font-semibold text-natuna-deep">
             {t.point}
           </h3>
           <p className="leading-relaxed">{prd.goal}</p>
         </div>
         <div className="px-6 py-5">
-          <h3 className="mb-2 text-xs font-bold tracking-wide text-natuna-deep uppercase">
+          <h3 className="mb-2 text-sm font-semibold text-natuna-deep">
             {t.whoUses}
           </h3>
           <p className="leading-relaxed">{prd.users}</p>
@@ -80,7 +80,7 @@ export default function PRDPanel({ brief, lang }: { brief: Brief; lang: Lang }) 
       </div>
 
       <div className="border-b border-line px-6 py-5">
-        <h3 className="mb-2 text-xs font-bold tracking-wide text-natuna-deep uppercase">
+        <h3 className="mb-2 text-sm font-semibold text-natuna-deep">
           {t.whatToDo}
         </h3>
         <ul className="list-disc space-y-1.5 pl-5">
@@ -92,13 +92,13 @@ export default function PRDPanel({ brief, lang }: { brief: Brief; lang: Lang }) 
 
       <div className="grid divide-line sm:grid-cols-2 sm:divide-x">
         <div className="px-6 py-5">
-          <h3 className="mb-2 text-xs font-bold tracking-wide text-natuna-deep uppercase">
+          <h3 className="mb-2 text-sm font-semibold text-natuna-deep">
             {t.rightIf}
           </h3>
           <p className="leading-relaxed">{prd.success}</p>
         </div>
         <div className="px-6 py-5">
-          <h3 className="mb-2 text-xs font-bold tracking-wide text-natuna-deep uppercase">
+          <h3 className="mb-2 text-sm font-semibold text-natuna-deep">
             {t.skip}
           </h3>
           <ul className="list-disc space-y-1.5 pl-5">

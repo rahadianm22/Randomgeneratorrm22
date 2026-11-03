@@ -70,7 +70,7 @@ export default function DesignMdButton({
       <button
         onClick={() => setOpen(true)}
         disabled={!brief}
-        className="inline-flex items-center gap-2 border-2 border-white bg-white px-5 py-3 text-[15px] font-bold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white disabled:opacity-50"
+        className="inline-flex items-center gap-2 rounded-xl border-2 border-white bg-white px-5 py-3 text-[15px] font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white disabled:opacity-50"
       >
         <svg {...iconProps}>
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
@@ -89,7 +89,7 @@ export default function DesignMdButton({
             aria-modal="true"
             aria-label={filename}
             onClick={(e) => e.stopPropagation()}
-            className="flex max-h-[92dvh] w-full max-w-[820px] flex-col border border-line bg-white text-ink shadow-[0_30px_80px_-20px_rgba(19,26,58,0.6)] sm:max-h-[86dvh]"
+            className="flex max-h-[92dvh] w-full max-w-[820px] flex-col overflow-hidden rounded-t-2xl border border-line bg-white sm:rounded-2xl text-ink shadow-[0_30px_80px_-20px_rgba(19,26,58,0.6)] sm:max-h-[86dvh]"
           >
             <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4 sm:px-6">
               <div className="min-w-0">
@@ -99,7 +99,7 @@ export default function DesignMdButton({
               <button
                 onClick={() => setOpen(false)}
                 aria-label={t.mdClose}
-                className="flex-none p-1 text-muted hover:text-ink"
+                className="flex-none rounded-lg p-1 text-muted hover:text-ink"
               >
                 <svg {...iconProps}>
                   <line x1="18" y1="6" x2="6" y2="18" />
@@ -138,13 +138,13 @@ export default function DesignMdButton({
             <footer className="flex flex-wrap justify-end gap-3 border-t border-line px-5 py-4 sm:px-6">
               <button
                 onClick={copy}
-                className="border-2 border-ink px-4 py-2.5 text-[15px] font-bold transition-colors hover:bg-ink hover:text-white"
+                className="rounded-xl border-2 border-ink px-4 py-2.5 text-[15px] font-bold transition-colors hover:bg-ink hover:text-white"
               >
                 {copied ? t.copied : t.mdCopy}
               </button>
               <button
                 onClick={download}
-                className="inline-flex items-center gap-2 border-2 border-ink bg-ink px-4 py-2.5 text-[15px] font-bold text-white transition-colors hover:bg-natuna hover:border-natuna"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-ink bg-ink px-4 py-2.5 text-[15px] font-bold text-white transition-colors hover:bg-natuna hover:border-natuna"
               >
                 <svg {...iconProps}>
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />

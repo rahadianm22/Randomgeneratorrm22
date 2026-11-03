@@ -25,12 +25,12 @@ export default function PromptPanel({
   }
 
   return (
-    <section className="border border-line bg-white">
+    <section className="overflow-hidden rounded-2xl border border-line bg-white">
       <header className="flex items-center justify-between gap-4 border-b border-line px-6 py-4">
         <h2 className="text-lg font-bold">{t.promptTitle}</h2>
         <button
           onClick={copy}
-          className="no-print border border-ink px-3 py-1.5 text-sm transition-colors hover:bg-ink hover:text-white"
+          className="no-print rounded-lg border border-ink px-3 py-1.5 text-sm transition-colors hover:bg-ink hover:text-white"
         >
           {copied ? t.copied : t.copyPrompt}
         </button>

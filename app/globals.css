@@ -18,6 +18,7 @@ html,
 body {
   background: var(--color-wash);
   color: var(--color-ink);
+  overflow-x: clip;
 }
 
 body {
@@ -27,6 +28,10 @@ body {
 *:focus-visible {
   outline: 3px solid var(--color-natuna);
   outline-offset: 3px;
+}
+
+header *:focus-visible {
+  outline-color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {

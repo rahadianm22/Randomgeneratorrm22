@@ -83,7 +83,7 @@ export const poolsId: Pool = {
     "Tanpa pop-up",
     "Semua layar dalam alur harus terlihat berdampingan di satu board",
     "Tombol utama tidak boleh berwarna biru",
-    "Tanpa tombol — semua aksi lewat geser atau seret",
+    "Tanpa tombol: semua aksi lewat geser atau seret",
     "Setiap elemen harus punya garis tepi yang terlihat",
     "Tata letak harus dari kanan ke kiri",
     "Tanpa gambar atau ikon, hanya teks",

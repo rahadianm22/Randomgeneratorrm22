@@ -40,7 +40,7 @@ export default function Markdown({ source }: { source: string }) {
 
     if (line.startsWith("#### ")) {
       nodes.push(
-        <h5 key={i} className="mt-4 mb-1 text-[13px] font-bold tracking-wide text-natuna-deep uppercase">
+        <h5 key={i} className="mt-4 mb-1 text-sm font-semibold text-natuna-deep">
           {line.slice(5)}
         </h5>,
       );

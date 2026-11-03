@@ -10,7 +10,7 @@ const display = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "Random Generator — Design by Rahadianm22",
+  title: "Random Generator by Rahadianm22",
   description:
     "Draws a practice design brief and writes the matching brief for it.",
 };

@@ -39,11 +39,11 @@ export default function HistoryView({
       </div>
 
       {briefs.length === 0 ? (
-        <div className="border border-dashed border-line bg-white px-6 py-14 text-center text-muted">
+        <div className="rounded-2xl border border-dashed border-line bg-white px-6 py-14 text-center text-muted">
           <p className="mb-5">{t.emptyHistory}</p>
           <button
             onClick={onDrawFirst}
-            className="border-none bg-ink px-6 py-3 font-medium text-white shadow-[4px_4px_0_var(--color-line)] transition-transform hover:-translate-x-px hover:-translate-y-px active:translate-x-0.5 active:translate-y-0.5"
+            className="rounded-xl bg-ink px-6 py-3 font-semibold text-white shadow-[4px_4px_0_var(--color-line)] transition-[transform,box-shadow] hover:-translate-x-px hover:-translate-y-px hover:shadow-[5px_5px_0_var(--color-line)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
           >
             {t.pullFirst}
           </button>
@@ -56,12 +56,12 @@ export default function HistoryView({
             <button
               key={brief.id}
               onClick={() => onSelect(brief)}
-              className={`flex gap-3.5 border border-line bg-white px-4.5 py-4 text-left transition-all hover:translate-x-0.5 ${
-                brief.crazy ? "border-l-4 border-l-ember" : "border-l-4 border-l-line hover:border-l-natuna"
+              className={`flex gap-3.5 rounded-xl border bg-white px-4 py-4 text-left transition-[border-color,background-color] hover:bg-natuna-soft/40 ${
+                brief.crazy ? "border-ember/60" : "border-line hover:border-natuna"
               }`}
             >
               <span
-                className={`h-fit flex-none px-2 py-0.5 text-sm font-semibold ${
+                className={`h-fit flex-none rounded-md px-2 py-0.5 text-sm font-semibold ${
                   brief.crazy ? "bg-ember text-white" : "bg-natuna-soft text-muted"
                 }`}
               >
@@ -72,8 +72,7 @@ export default function HistoryView({
                   {text.task}
                 </span>
                 <span className="mt-1.5 block text-sm text-muted">
-                  <b className="font-medium text-ink">{text.industry}</b> ·{" "}
-                  {text.platform}
+                  <b className="font-medium text-ink">{text.industry}</b>, {text.platform}
                 </span>
               </span>
             </button>

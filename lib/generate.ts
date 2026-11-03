@@ -68,11 +68,11 @@ export function buildPrompt(b: Brief, lang: Lang): string {
   if (lang === "id") {
     return `# Brief desain
 
-**Yang perlu didesain:** Seluruh alur dari awal sampai akhir — ${t.task}
-**Kategori dan platform:** ${t.industry} — ${t.platform}
+**Yang perlu didesain:** Seluruh alur dari awal sampai akhir: ${t.task}
+**Kategori dan platform:** ${t.industry}, ${t.platform}
 **Pengguna:** ${t.audience}
 **Tampilan:** ${t.style}
-**Aturan yang tidak boleh dilanggar:** ${t.constraint}${b.crazy ? "\n**Mode:** Mode gila — dorong lebih jauh dari batas nyamanmu" : ""}
+**Aturan yang tidak boleh dilanggar:** ${t.constraint}${b.crazy ? "\n**Mode:** Mode gila. Dorong lebih jauh dari batas nyamanmu" : ""}
 
 ## Yang perlu diserahkan
 
@@ -90,15 +90,15 @@ export function buildPrompt(b: Brief, lang: Lang): string {
   }
   return `# Design brief
 
-**What to design:** The whole flow, start to finish — ${t.task}
-**Category and platform:** ${t.industry} — ${t.platform}
+**What to design:** The whole flow, start to finish: ${t.task}
+**Category and platform:** ${t.industry}, ${t.platform}
 **Who uses it:** ${t.audience}
 **How it should look:** ${t.style}
-**The rule you cannot break:** ${t.constraint}${b.crazy ? "\n**Mode:** Go Crazy — push it further than feels comfortable" : ""}
+**The rule you cannot break:** ${t.constraint}${b.crazy ? "\n**Mode:** Go Crazy. Push it further than feels comfortable" : ""}
 
 ## What to hand back
 
-1. Every screen of the flow, in order, from the first time it is opened to the last step. Include the states that matter — loading, an error, empty, or done — wherever the flow needs them.
+1. Every screen of the flow, in order, from the first time it is opened to the last step. Include the states that matter (loading, an error, empty, or done) wherever the flow needs them.
 2. A short explanation: what the person is trying to do at each stage, what each screen puts first, and what you chose to leave out.
 3. A list of the colours, text sizes, and spacing you used, so someone else could rebuild it.
 
@@ -126,10 +126,10 @@ export function buildPRD(b: Brief, lang: Lang): PRD {
     return {
       context: `Rancang seluruh alur ${lcFirst(t.task)}, untuk ${lcFirst(t.platform)} di kategori ${lcFirst(t.industry)}. Ini hanya latihan, tetapi anggap aturan dan penggunanya nyata. Tantangannya: mendesain dengan baik di dalam batasan yang tidak kamu pilih sendiri.`,
       goal: `Membantu ${lcFirst(t.audience)} berjalan dari awal sampai akhir tanpa perlu meminta bantuan atau mengulang dari awal.`,
-      users: `${t.audience}. Rancang sesuai apa yang benar-benar mereka ketahui — jangan berasumsi mereka sudah terbiasa dengan aplikasi seperti ini.`,
+      users: `${t.audience}. Rancang sesuai apa yang benar-benar mereka ketahui. Jangan berasumsi mereka sudah terbiasa dengan aplikasi seperti ini.`,
       requirements: [
         "Rancang alur lengkap, layar demi layar dan berurutan, dari pertama kali dibuka sampai langkah terakhir.",
-        "Tampilkan kondisi yang penting — memuat, error, kosong, atau berhasil — di bagian yang memang membutuhkannya.",
+        "Tampilkan kondisi yang penting (memuat, error, kosong, atau berhasil) di bagian yang memang membutuhkannya.",
         `Tampilan harus seperti ini: ${lcFirst(t.style)}.`,
         `Patuhi aturan berikut di setiap layar, walaupun bertentangan dengan kebiasaan umum: ${lcFirst(t.constraint)}.`,
       ],
@@ -139,7 +139,7 @@ export function buildPRD(b: Brief, lang: Lang): PRD {
         "Layar lain di luar alur ini",
         "Cara kerja di balik layar dan asal datanya",
         b.crazy
-          ? "Bermain aman — aturan di atas memang sengaja dibuat tidak nyaman"
+          ? "Bermain aman: aturan di atas memang sengaja dibuat tidak nyaman"
           : "Kasus-kasus langka di luar kondisi yang diminta di atas",
       ],
     };
@@ -147,10 +147,10 @@ export function buildPRD(b: Brief, lang: Lang): PRD {
   return {
     context: `Design the whole flow of ${lcFirst(t.task)}, as a ${lcFirst(t.platform)} in the ${lcFirst(t.industry)} category. This is practice, but treat the rule and the people using it as real. The point is designing well inside a limit you did not choose.`,
     goal: `Let ${lcFirst(t.audience)} get from the first screen to the last without asking for help or having to start over.`,
-    users: `${t.audience}. Design for what this group actually knows — do not assume they have used anything like it before.`,
+    users: `${t.audience}. Design for what this group actually knows. Do not assume they have used anything like it before.`,
     requirements: [
       "Design the complete flow, screen by screen and in order, from the first time it is opened to the final step.",
-      "Show the states that matter — loading, an error, empty, or done — wherever the flow needs them.",
+      "Show the states that matter (loading, an error, empty, or done) wherever the flow needs them.",
       `Make it look like this: ${lcFirst(t.style)}.`,
       `Follow the rule on every screen, even where it clashes with the usual way: ${lcFirst(t.constraint)}.`,
     ],
@@ -160,7 +160,7 @@ export function buildPRD(b: Brief, lang: Lang): PRD {
       "Any screen that is not part of this flow",
       "How it works behind the scenes, and where the data comes from",
       b.crazy
-        ? "Playing it safe — the rule above is meant to be uncomfortable"
+        ? "Playing it safe: the rule above is meant to be uncomfortable"
         : "Unusual situations beyond the states asked for above",
     ],
   };
