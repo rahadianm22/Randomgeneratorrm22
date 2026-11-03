@@ -89,7 +89,7 @@ export default function DesignMdButton({
             aria-modal="true"
             aria-label={filename}
             onClick={(e) => e.stopPropagation()}
-            className="flex max-h-[92dvh] w-full max-w-[820px] flex-col overflow-hidden rounded-t-2xl border border-line bg-white sm:rounded-2xl text-ink shadow-[0_30px_80px_-20px_rgba(19,26,58,0.6)] sm:max-h-[86dvh]"
+            className="flex max-h-[92dvh] w-full max-w-[820px] flex-col overflow-hidden rounded-t-2xl border border-line bg-paper text-fg sm:rounded-2xl shadow-[0_30px_80px_-20px_rgba(19,26,58,0.6)] sm:max-h-[86dvh]"
           >
             <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4 sm:px-6">
               <div className="min-w-0">
@@ -99,7 +99,7 @@ export default function DesignMdButton({
               <button
                 onClick={() => setOpen(false)}
                 aria-label={t.mdClose}
-                className="flex-none rounded-lg p-1 text-muted hover:text-ink"
+                className="flex-none rounded-lg p-1 text-muted hover:text-fg"
               >
                 <svg {...iconProps}>
                   <line x1="18" y1="6" x2="6" y2="18" />
@@ -116,8 +116,8 @@ export default function DesignMdButton({
                   aria-pressed={view === v}
                   className={`-mb-px border-b-2 px-3 py-2 text-sm font-semibold ${
                     view === v
-                      ? "border-ink text-ink"
-                      : "border-transparent text-muted hover:text-ink"
+                      ? "border-fg text-fg"
+                      : "border-transparent text-muted hover:text-fg"
                   }`}
                 >
                   {v === "preview" ? t.mdPreview : t.mdRaw}
@@ -138,7 +138,7 @@ export default function DesignMdButton({
             <footer className="flex flex-wrap justify-end gap-3 border-t border-line px-5 py-4 sm:px-6">
               <button
                 onClick={copy}
-                className="rounded-xl border-2 border-ink px-4 py-2.5 text-[15px] font-bold transition-colors hover:bg-ink hover:text-white"
+                className="rounded-xl border-2 border-fg px-4 py-2.5 text-[15px] font-bold transition-colors hover:bg-ink hover:text-white"
               >
                 {copied ? t.copied : t.mdCopy}
               </button>

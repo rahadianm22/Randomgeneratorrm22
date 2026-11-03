@@ -2,6 +2,7 @@
 
 @theme {
   --color-ink: #131a3a;
+  --color-fg: #131a3a;
   --color-paper: #ffffff;
   --color-wash: #eef1fb;
   --color-natuna: #2b4eff;
@@ -17,8 +18,24 @@
 html,
 body {
   background: var(--color-wash);
-  color: var(--color-ink);
+  color: var(--color-fg);
   overflow-x: clip;
+}
+
+/* Dark theme: only the tokens change. "ink" is the dark surface colour
+   (buttons, title bars), so it lifts to a mid navy that still holds white
+   text; "fg" is the text colour and flips to light. */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-fg: #e8ebff;
+  --color-ink: #2b3680;
+  --color-paper: #151a36;
+  --color-wash: #0c1024;
+  --color-natuna: #2c46d4;
+  --color-natuna-deep: #9db0ff;
+  --color-natuna-soft: #1e2656;
+  --color-line: #2b3361;
+  --color-muted: #9aa4d4;
 }
 
 body {

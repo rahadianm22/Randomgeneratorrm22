@@ -39,7 +39,7 @@ export default function HistoryView({
       </div>
 
       {briefs.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-line bg-white px-6 py-14 text-center text-muted">
+        <div className="rounded-2xl border border-dashed border-line bg-paper px-6 py-14 text-center text-muted">
           <p className="mb-5">{t.emptyHistory}</p>
           <button
             onClick={onDrawFirst}
@@ -56,7 +56,7 @@ export default function HistoryView({
             <button
               key={brief.id}
               onClick={() => onSelect(brief)}
-              className={`flex gap-3.5 rounded-xl border bg-white px-4 py-4 text-left transition-[border-color,background-color] hover:bg-natuna-soft/40 ${
+              className={`flex gap-3.5 rounded-xl border bg-paper px-4 py-4 text-left transition-[border-color,background-color] hover:bg-natuna-soft/40 ${
                 brief.crazy ? "border-ember/60" : "border-line hover:border-natuna"
               }`}
             >
@@ -72,7 +72,7 @@ export default function HistoryView({
                   {text.task}
                 </span>
                 <span className="mt-1.5 block text-sm text-muted">
-                  <b className="font-medium text-ink">{text.industry}</b>, {text.platform}
+                  <b className="font-medium text-fg">{text.industry}</b>, {text.platform}
                 </span>
               </span>
             </button>

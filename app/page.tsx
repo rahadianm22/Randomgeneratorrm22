@@ -8,6 +8,7 @@ import HistoryView from "@/components/HistoryView";
 import PdfButton from "@/components/PdfButton";
 import DesignMdButton from "@/components/DesignMdButton";
 import LangSwitch from "@/components/LangSwitch";
+import ThemeToggle from "@/components/ThemeToggle";
 import { buildPrompt, generateBrief, type Brief } from "@/lib/generate";
 import { ui, type Lang } from "@/lib/i18n";
 
@@ -71,12 +72,13 @@ export default function Home() {
             <DesignMdButton brief={brief} lang={lang} />
             <PdfButton brief={brief} lang={lang} />
             <LangSwitch lang={lang} onChange={changeLang} />
+            <ThemeToggle lang={lang} />
           </div>
         </div>
       </header>
 
       <main className="print-area mx-auto -mt-[26px] max-w-[1000px] px-5 pb-20 sm:px-8">
-        <div className="tabbar-wrap no-print inline-flex gap-1 rounded-2xl border border-line bg-white p-1 shadow-[0_18px_40px_-26px_rgba(19,26,58,0.5)]">
+        <div className="tabbar-wrap no-print inline-flex gap-1 rounded-2xl border border-line bg-paper p-1 shadow-[0_18px_40px_-26px_rgba(19,26,58,0.5)]">
           <button
             onClick={() => setTab("main")}
             className={`rounded-xl px-5 py-2.5 text-[15px] font-medium ${

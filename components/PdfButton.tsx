@@ -26,6 +26,10 @@ export default function PdfButton({
     const root = document.getElementById("brief-export");
     if (!brief || !root || status === "busy") return;
     setStatus("busy");
+    const html = document.documentElement;
+    const prevTheme = html.dataset.theme;
+    html.dataset.theme = "light";
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
     try {
       const [{ toCanvas }, { jsPDF }] = await Promise.all([
         import("html-to-image"),
@@ -39,7 +43,7 @@ export default function PdfButton({
       for (const panel of Array.from(root.children) as HTMLElement[]) {
         const canvas = await toCanvas(panel, {
           pixelRatio: 2,
-          backgroundColor: "#ffffff",
+          backgroundColor: getComputedStyle(panel).backgroundColor,
           filter: (n) =>
             !(
               n instanceof HTMLElement &&
@@ -85,6 +89,8 @@ export default function PdfButton({
     } catch {
       setStatus("failed");
       setTimeout(() => setStatus("idle"), 2000);
+    } finally {
+      if (prevTheme) html.dataset.theme = prevTheme;
     }
   }
 

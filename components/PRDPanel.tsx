@@ -21,7 +21,7 @@ export default function PRDPanel({ brief, lang }: { brief: Brief; lang: Lang }) 
       // Promise passed straight to ClipboardItem so Safari keeps the click gesture.
       const blob = toBlob(node, {
         pixelRatio: 2,
-        backgroundColor: "#ffffff",
+        backgroundColor: getComputedStyle(node).backgroundColor,
         filter: (n) => !(n instanceof HTMLElement && n.dataset.noCapture),
       }).then((b) => {
         if (!b) throw new Error("render failed");
@@ -36,7 +36,7 @@ export default function PRDPanel({ brief, lang }: { brief: Brief; lang: Lang }) 
   }
 
   return (
-    <section ref={ref} className="overflow-hidden rounded-2xl border border-line bg-white">
+    <section ref={ref} className="overflow-hidden rounded-2xl border border-line bg-paper">
       <header className="flex flex-wrap items-center justify-between gap-3 bg-ink px-6 py-4 text-white">
         <h2 className="text-lg font-bold">{t.fullBrief}</h2>
         <div className="ml-auto flex items-center gap-3">

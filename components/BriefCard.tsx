@@ -5,7 +5,7 @@ export default function BriefCard({ brief, lang }: { brief: Brief; lang: Lang })
   const t = ui[lang];
   const text = briefText(brief, lang);
   return (
-    <article className="grid overflow-hidden rounded-2xl grid-cols-[56px_minmax(0,1fr)] border border-line bg-white shadow-[0_18px_40px_-24px_rgba(19,26,58,0.45)] sm:grid-cols-[76px_minmax(0,1fr)]">
+    <article className="grid overflow-hidden rounded-2xl grid-cols-[56px_minmax(0,1fr)] border border-line bg-paper shadow-[0_18px_40px_-24px_rgba(19,26,58,0.45)] sm:grid-cols-[76px_minmax(0,1fr)]">
       <div className="relative flex items-start justify-center bg-ink py-6 text-white [background-image:repeating-linear-gradient(to_bottom,transparent_0,transparent_8px,rgba(255,255,255,0.35)_8px,rgba(255,255,255,0.35)_9px)] [background-position:right] [background-size:1px_100%] [background-repeat:no-repeat]">
         <span className="[writing-mode:vertical-rl] rotate-180 text-[15px] font-semibold text-white/70">
           {t.ticket} {brief.id}
