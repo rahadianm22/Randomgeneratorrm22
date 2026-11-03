@@ -2,9 +2,17 @@
 
 import { useState } from "react";
 import Markdown from "./Markdown";
+import { ui, type Lang } from "@/lib/i18n";
 
-export default function PromptPanel({ prompt }: { prompt: string }) {
+export default function PromptPanel({
+  prompt,
+  lang,
+}: {
+  prompt: string;
+  lang: Lang;
+}) {
   const [copied, setCopied] = useState(false);
+  const t = ui[lang];
 
   async function copy() {
     try {
@@ -19,12 +27,12 @@ export default function PromptPanel({ prompt }: { prompt: string }) {
   return (
     <section className="border border-line bg-white">
       <header className="flex items-center justify-between gap-4 border-b border-line px-6 py-4">
-        <h2 className="text-lg font-bold">Ready to paste into an AI</h2>
+        <h2 className="text-lg font-bold">{t.promptTitle}</h2>
         <button
           onClick={copy}
           className="no-print border border-ink px-3 py-1.5 text-sm transition-colors hover:bg-ink hover:text-white"
         >
-          {copied ? "Copied" : "Copy prompt"}
+          {copied ? t.copied : t.copyPrompt}
         </button>
       </header>
       <div className="px-6 py-6">

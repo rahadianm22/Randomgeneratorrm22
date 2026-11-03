@@ -38,7 +38,19 @@ export default function Markdown({ source }: { source: string }) {
     }
     flush(`list-${i}`);
 
-    if (line.startsWith("## ")) {
+    if (line.startsWith("#### ")) {
+      nodes.push(
+        <h5 key={i} className="mt-4 mb-1 text-[13px] font-bold tracking-wide text-natuna-deep uppercase">
+          {line.slice(5)}
+        </h5>,
+      );
+    } else if (line.startsWith("### ")) {
+      nodes.push(
+        <h4 key={i} className="mt-4 mb-1 text-base font-semibold">
+          {line.slice(4)}
+        </h4>,
+      );
+    } else if (line.startsWith("## ")) {
       nodes.push(
         <h3 key={i} className="mt-6 mb-2 text-lg font-semibold">
           {line.slice(3)}
